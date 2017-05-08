@@ -37,7 +37,16 @@
           ORDER BY `freimodule`.`freimodul_id` ASC";
   return get_result($sql);
 }
+    function get_modul_info($local_id)
+    //Abfrage Info von Freimodul;
 
+    {
+      $sql = "SELECT 'Dozent', 'Tage', 'Text'
+              FROM freimodule
+              WHERE ('$local_id' ='freimodul_id'.)";
+
+
+    }
 
 
 
