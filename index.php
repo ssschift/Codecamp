@@ -53,29 +53,33 @@ require_once('system/security.php');
                   <div class="panel-body">
                     <div class="radio">
                       <label>
-                        <input type="radio" name="GruppeEins" id="1" value="option1_1">
+                        <input type="radio" name="GruppeEins" id="info1" value="option1_1">
                         Filmisches Erzählen
                       </label> <a class="mod_info"  data-modid="1"><span class="glyphicon glyphicon-flag" aria-hidden="true"></span></a>
                     </div>
                     <div class="radio">
                       <label>
-                        <input type="radio" name="GruppeEins" id="2" value="option1_2">
+                        <input type="radio" name="GruppeEins" id="info2" value="option1_2">
                         Design Thinking
                       </label> <a class="mod_info"  data-modid="2"><span class="glyphicon glyphicon-flag" aria-hidden="true"></span></a>
                     </div>
                     <div class="radio">
                       <label>
-                        <input type="radio" name="GruppeEins" id="3" value="option1_3">
+                        <input type="radio" name="GruppeEins" id="info3" value="option1_3">
                         Live Kommunikation
-                      </label>
+                      </label><a class="mod_info"  data-modid="3"><span class="glyphicon glyphicon-flag" aria-hidden="true"></span></a>
                     </div>
                     <div class="radio">
                       <label>
-                        <input type="radio" name="GruppeEins" id="10" value="option1_4">
+                        <input type="radio" name="GruppeEins" id="info10" value="option1_4">
                         Keine Auswahl
-                      </label>
+                      </label><a class="mod_info"  data-modid="10"><span class="glyphicon glyphicon-flag" aria-hidden="true"></span></a>
                     </div>
+                    <br>
                     <section id="content_gr1">
+                      <h5>Dozent</h5> Hr. Bock
+                      <h5>Tage</h5> 6
+                      <h5>Text</h5> asölkdfjasöldkjf
                     </section>
                   </div> <!-- Panelbody fertig -->
                 </div>
