@@ -28,12 +28,12 @@
     }
 
 
-    function get_modul($freimodul_id)
+    function get_modul($local_id)
     //Abfrage für gewählte Freimodule;
 {
   $sql = "SELECT *
           FROM freimodule
-          WHERE (`freimodule`.`freimodul_id` = 2)
+          WHERE (`freimodule`.`freimodul_id` = $local_id)
           ORDER BY `freimodule`.`freimodul_id` ASC";
   return get_result($sql);
 }
