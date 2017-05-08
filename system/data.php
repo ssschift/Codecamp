@@ -44,7 +44,7 @@
       $sql = "SELECT 'Dozent', 'Tage', 'Text'
               FROM freimodule
               WHERE ('$local_id' ='freimodul_id'.)";
-
+  return get_result($sql);
 
     }
 
