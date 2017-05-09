@@ -6,6 +6,10 @@
 	*/
 
 
+
+
+
+
   $Dozent ="Bock";
   $Tage = "6";
   $Text = "loremipsumloremipsum";

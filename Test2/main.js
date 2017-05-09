@@ -7,7 +7,7 @@ $(document).ready(function() {
     $.ajax({
       // method: "GET",				// type auch ok
       url: "Test2/infomodul.php",	// Aufruf externer Datei
-      data: {infoFreimodul: imageCounter},	// Übergeben Parameter an PHP
+      data: {infoFreimodul: modulName},	// Übergeben Parameter an PHP
       dataType: "text",
       success: function (output) {	// empfangen von PHP
         imageCounter = imageCounter + 1;
