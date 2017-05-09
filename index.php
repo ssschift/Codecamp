@@ -77,7 +77,7 @@ require_once('system/security.php');
                     </div>
                     <br>
                     <section id="content_gr1">
-                      <h5>Dozent</h5> Hr. Bock
+                      <h5>Dozent</h5> <?php echo $mod_info [''] ?>
                       <h5>Tage</h5> 6
                       <h5>Text</h5> asölkdfjasöldkjf
                     </section>
@@ -164,19 +164,10 @@ require_once('system/security.php');
               <div class="panel panel-default">
                 <div class="panel-heading" role="tab" id="überschriftVier">
                   <h4 class="panel-title">
-                    <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseVier" aria-expanded="false" aria-controls"collapseDrei">
+                    <a class="collapsed" role="button" data-toggle="collapse" type="submit" data-parent="#accordion" href="#collapseVier" aria-expanded="false" aria-controls"collapseDrei">
                       Bestätigen
                     </a>
                   </h4>
-                </div>
-                <div id="collapseVier" class="panel-collapse collapse" role="tabpanel" aria-labelledby="überschriftVier">
-                  <div class="panel-body">
-                    <div>
-                        <button type="submit" class="btn btn-default"> Senden </button>
-                    </div>
-                    <br>
-                    Vielen Dank für die Auswahl ihrer Freimodule.
-                  </div>
                 </div>
               </div>
             </div> <!-- Accordion Ende -->
