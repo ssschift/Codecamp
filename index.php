@@ -49,33 +49,30 @@ require_once('system/security.php');
                   <div class="panel-body">
                     <div class="radio">
                       <label>
-                        <input type="radio" name="GruppeEins" id="info1" value="option1_1">
+                        <input type="radio" name="GruppeEins" id="info1" value="option1_1" a class="rad">
                         Filmisches Erzählen
                       </label> <a class="mod_info"  data-modid="1"><span class="glyphicon glyphicon-flag" aria-hidden="true"></span></a>
                     </div>
                     <div class="radio">
                       <label>
-                        <input type="radio" name="GruppeEins" id="info2" value="option1_2">
+                        <input type="radio" name="GruppeEins" id="info2" value="option1_2" a class="rad">
                         Design Thinking
                       </label> <a class="mod_info"  data-modid="2"><span class="glyphicon glyphicon-flag" aria-hidden="true"></span></a>
                     </div>
                     <div class="radio">
                       <label>
-                        <input type="radio" name="GruppeEins" id="info3" value="option1_3">
+                        <input type="radio" name="GruppeEins" id="info3" value="option1_3" a class="rad">
                         Live Kommunikation
                       </label><a class="mod_info"  data-modid="3"><span class="glyphicon glyphicon-flag" aria-hidden="true"></span></a>
                     </div>
                     <div class="radio">
                       <label>
-                        <input type="radio" name="GruppeEins" id="info10" value="option1_4">
+                        <input type="radio" name="GruppeEins" id="info10" value="option1_4" a class="rad">
                         Keine Auswahl
                       </label><a class="mod_info"  data-modid="10"><span class="glyphicon glyphicon-flag" aria-hidden="true"></span></a>
                     </div>
                     <br>
                     <section id="content_gr1">
-                      <h5>Dozent</h5>
-                      <h5>Tage</h5>
-                      <h5>Text</h5>
                     </section>
                   </div> <!-- Panelbody fertig -->
                 </div>
@@ -198,6 +195,41 @@ require_once('system/security.php');
         }
       })
     })
+
+
+
+    $(".rad").click(function(){
+      console.log($(this).attr("value"));
+      mod_id = $(this).attr("value");
+
+      $.ajax({
+        method: "GET",
+        url : "system/ajax_mod_info.php",
+        data : {mi : mod_id},
+        dataType : "html",
+        success : function(mod_info){
+          $("#content_gr1").html(mod_info)
+        }
+      })
+    })
+
+//Make Radiobuttons feeeett
+    var selected = []
+
+    $(".radio1").change(function() {
+
+    for (i = 0; i<4; i++){
+      var n = "#field0"+i;
+      var m = $(n).find(".rad").is(":checked");
+      if (m){
+          $(n).css("font-weight", "600");}
+
+      else if (m==false){
+        $(n).css("font-weight", "100");}
+     };
+    });
+
+
     </script>
   </body>
 </html>
