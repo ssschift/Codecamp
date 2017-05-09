@@ -2,7 +2,7 @@
 
   function get_db_connection()
   {
-    $db = mysqli_connect('localhost', '155425_5_1', 'PKGsgz3Bv8mH', '155425_5_1')
+    $db = mysqli_connect('localhost', '155425_5_1', 'WJp5@HFTulmq', '155425_5_1')
       or die('Fehler beim Verbinden mit dem Datenbank-Server.');
     mysqli_set_charset($db, "utf8");
     return $db;
@@ -17,6 +17,7 @@
       return $result;
     }
 
+
     function get_id_result($sql)
     {
       $db = get_db_connection();
@@ -26,28 +27,36 @@
       mysqli_close($db);
       return $result;
     }
-
-
-    function get_modul($local_id)
-    //Abfrage für gewählte Freimodule;
+/*
+function get_modul($local_id)
+//Abfrage Info von Freimodul;
 {
-  $sql = "SELECT *
+  $sql = "SELECT 'Dozent', 'Tage', 'Text'
           FROM freimodule
-          WHERE (`freimodule`.`freimodul_id` = $local_id)
-          ORDER BY `freimodule`.`freimodul_id` ASC";
-  return get_result($sql);
-}
+          WHERE freimodul_id = '$local_id';";
+          return get_result($sql);
+        }
+*/
+
     function get_modul_info($local_id)
     //Abfrage Info von Freimodul;
-
     {
-      $sql = "SELECT 'Dozent', 'Tage', 'Text'
+      $sql = "SELECT Dozent, Tage, Text
               FROM freimodule
-              WHERE ('$local_id' ='freimodul_id'.)";
-  return get_result($sql);
+              WHERE freimodul_id = '$local_id';";
+              return get_result($sql);
+            }
+
+
+
+    function get_modul_name($local_id)
+    //Abfrage Info von Freimodul;
+    {
+      $sql = "SELECT 'Freimodul'
+              FROM freimodule
+              WHERE freimodul_id = '$local_id';";
+      return get_result($sql);
 
     }
-
-
 
   ?>

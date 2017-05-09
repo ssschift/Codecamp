@@ -9,10 +9,6 @@ require_once('system/security.php');
 
 
 
-
-
-
-
 <!DOCTYPE html>
 <html lang="de">
   <head>
@@ -77,7 +73,7 @@ require_once('system/security.php');
                     </div>
                     <br>
                     <section id="content_gr1">
-                      <h5>Dozent</h5> <?php echo $mod_info [''] ?>
+                      <h5>Dozent</h5>
                       <h5>Tage</h5> 6
                       <h5>Text</h5> asölkdfjasöldkjf
                     </section>
@@ -180,8 +176,18 @@ require_once('system/security.php');
     <script src="js/bootstrap.min.js"></script>
     <script>
       $(".mod_info").click(function(){
-        console.log($(this).attr("data-modid"));
+      //  console.log($(this).attr("data-modid"));
         mod_id = $(this).attr("data-modid");
+
+        $.ajax({
+          method: "GET",
+          url : "system/ajax_mod_info.php",
+          data : {mi : mod_id},
+          dataType : "html",
+          success : function(mod_info){
+            $("#content_gr1").html(mod_info)
+          }
+        })
       })
     </script>
   </body>
