@@ -74,8 +74,8 @@ require_once('system/security.php');
                     <br>
                     <section id="content_gr1">
                       <h5>Dozent</h5>
-                      <h5>Tage</h5> 6
-                      <h5>Text</h5> asölkdfjasöldkjf
+                      <h5>Tage</h5>
+                      <h5>Text</h5>
                     </section>
                   </div> <!-- Panelbody fertig -->
                 </div>
@@ -160,10 +160,19 @@ require_once('system/security.php');
               <div class="panel panel-default">
                 <div class="panel-heading" role="tab" id="überschriftVier">
                   <h4 class="panel-title">
-                    <a class="collapsed" role="button" data-toggle="collapse" type="submit" data-parent="#accordion" href="#collapseVier" aria-expanded="false" aria-controls"collapseDrei">
+                    <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseVier" aria-expanded="false" aria-controls"collapseDrei">
                       Bestätigen
                     </a>
                   </h4>
+                </div>
+                <div id="collapseVier" class="panel-collapse collapse" role="tabpanel" aria-labelledby="überschriftVier">
+                  <div class="panel-body">
+                    <div>
+                        <button type="submit" class="btn btn-default"> Senden </button>
+                    </div>
+                    <br>
+                    Vielen Dank für die Auswahl ihrer Freimodule.
+                  </div>
                 </div>
               </div>
             </div> <!-- Accordion Ende -->
@@ -175,20 +184,20 @@ require_once('system/security.php');
     <!-- JavaScript-Bootstrap -->
     <script src="js/bootstrap.min.js"></script>
     <script>
-      $(".mod_info").click(function(){
-      //  console.log($(this).attr("data-modid"));
-        mod_id = $(this).attr("data-modid");
+    $(".mod_info").click(function(){
+      console.log($(this).attr("data-modid"));
+      mod_id = $(this).attr("data-modid");
 
-        $.ajax({
-          method: "GET",
-          url : "system/ajax_mod_info.php",
-          data : {mi : mod_id},
-          dataType : "html",
-          success : function(mod_info){
-            $("#content_gr1").html(mod_info)
-          }
-        })
+      $.ajax({
+        method: "GET",
+        url : "system/ajax_mod_info.php",
+        data : {mi : mod_id},
+        dataType : "html",
+        success : function(mod_info){
+          $("#content_gr1").html(mod_info)
+        }
       })
+    })
     </script>
   </body>
 </html>
